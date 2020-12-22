@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1 style={{color: 'red' }}>Heloo world</h1> 
+      <h1 style={{color: 'green' }}>Heloo world</h1> 
     </div>
   );
 }
