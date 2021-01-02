@@ -1,0 +1,114 @@
+@import "./helpers/FontAwesome/css/font-awesome.min.css";
+@font-face {
+  font-family: "MuseoSansCyrlBold";
+  font-weight: 500;
+  font-style: normal;
+  src: url(./fonts/MuseoSansCyrl/MuseoSansCyrlBold.ttf);
+}
+@font-face {
+  font-family: "MuseoSansCyrlMedium";
+  font-weight: 100;
+  font-style: normal;
+  src: url(./fonts/MuseoSansCyrl/MuseoSansCyrlMedium.ttf);
+}
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: 100;
+  font-style: normal;
+  src: url(./helpers/FontAwesome/fonts/fontawesome-webfont.ttf);
+}
+$mscM: "MuseoSansCyrlMedium", Arial, sans-serif;
+$mscB: "MuseoSansCyrlBold", Arial, sans-serif;
+$globalColor: #676666;
+$accentColor: #ebebeb;
+
+body {
+  margin: 0;
+  overflow: hidden;
+  padding-top: 10px;
+}
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(14, minmax(40px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 10px;
+  // grid-row-gap: 0px;
+  height: 100vh;
+  .wrapper-header {
+    grid-row: 1;
+    grid-column: 3/10;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto 1fr;
+    .header-logo {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: start;
+      align-items: center;
+      h1 {
+        color: $globalColor;
+        font-family: $mscM;
+        font-weight: 100;
+        font-size: 22px;
+        margin: 3px;
+      }
+    }
+    .header-search {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-gap: 10px;
+      grid-auto-flow: column;
+      justify-content: center;
+      align-items: center;
+      input {
+        border: none;
+        background: $accentColor;
+        padding: 4px;
+        height: 20px;
+        padding-left: 15px;
+        border-radius: 25px;
+        outline: none;
+        &::placeholder {
+          color: #a3a3a3;
+          font-family: $mscM;
+        }
+      }
+      button {
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 10em;
+        color: #ffffff;
+        font-size: 17px;
+        background: $globalColor;
+      }
+    }
+  }
+}
+
+.main-menu {
+  width: 100%;
+  border-radius: 10px;
+  grid-column: 10/13;
+  grid-row: 1/10;
+  background: $accentColor;
+}
+
+.container-content {
+  grid-row: 2/14;
+  grid-column: 3/10;
+  background: silver;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(1fr, minmax(400px, 1fr));
+  grid-auto-rows: 600px;
+  grid-gap: 10px;
+  overflow: scroll;
+  height: 100%;
+  .wrapper-card-group {
+    // grid-column: 1;
+    // grid-row: 1/5;
+    background: red;
+    width: 100%;
+  }
+}
