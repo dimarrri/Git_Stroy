@@ -91,7 +91,11 @@ body {
   border-radius: 10px;
   grid-column: 10/13;
   grid-row: 1/10;
+  min-height: 400px;
   background: $accentColor;
+}
+.main-menu-lg {
+  grid-column: 10/14;
 }
 
 .container-content {
@@ -101,14 +105,50 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(1fr, minmax(400px, 1fr));
-  grid-auto-rows: 600px;
+  grid-auto-rows: 450px;
   grid-gap: 10px;
   overflow: scroll;
   height: 100%;
+  padding: 10px;
   .wrapper-card-group {
-    // grid-column: 1;
-    // grid-row: 1/5;
-    background: red;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 10px;
+    .wrapper-card__item-vertical {
+      position: relative;
+      background: $globalColor;
+      grid-column: 1/3;
+      grid-row: 1/7;
+      border-radius: 10px;
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      h1 {
+        font-family: $mscM;
+        color: $accentColor;
+        font-size: 29px;
+        display: grid;
+        justify-items: end;
+        align-items: flex-end ;
+      }
+    }
+    .wrapper-card__item-horizontal-top {
+      background: $globalColor;
+      grid-column: 3/6;
+      grid-row: 1/4;
+      border-radius: 10px;
+
+    }
+    .wrapper-card__item-horizontal-bottom {
+      background: $globalColor;
+      grid-column: 3/6;
+      grid-row: 4/7;
+      border-radius: 10px;
+
+    }
   }
 }
