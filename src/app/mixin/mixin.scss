@@ -1,0 +1,32 @@
+@mixin styles_scroll_bar {
+    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 3px;
+      border-radius: 10em;
+    }
+    &::-webkit-scrollbar-button {
+      background-color: #ffffff;
+      height: 1px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #ffffff;
+      height: 100px;
+    }
+    &::-webkit-scrollbar-track-piece {
+      background-color: #ffffff;
+    }
+    &::-webkit-scrollbar-thumb {
+      height: 50px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 13px;
+    }
+    &::-webkit-scrollbar-corner {
+      background-color: #ffffff;
+    }
+    &::-webkit-resizer {
+      background-color: #ffffff;
+    }
+  }
