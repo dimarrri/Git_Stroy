@@ -1,0 +1,1 @@
+export { default as ContainerProductGroup } from "./ProductGroup/ProductGroup";

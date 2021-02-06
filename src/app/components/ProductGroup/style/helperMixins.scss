@@ -1,0 +1,96 @@
+@mixin __baseSetting {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	grid-gap: 10px;
+}
+
+@mixin __baseSettingProduct($globalColor) {
+	position: relative;
+	display: grid;
+	background: $globalColor;
+	border-radius: 10px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	grid-auto-flow: column;
+}
+
+@mixin __baseSettingTitle {
+	display: grid;
+	grid-template-rows: 1fr auto auto auto;
+	height: 100%;
+	grid-auto-flow: row;
+	h3 {
+		grid-row: 2;
+		font-family: $mscM;
+		font-weight: 100;
+		color: $accentColor;
+		font-size: 24px;
+		display: grid;
+		margin: 0;
+		margin-left: 10px;
+	}
+	span {
+		grid-row: 3;
+		font-size: 30px;
+		font-family: $mscB;
+		color: $accentColor;
+		margin: 10px;
+	}
+}
+
+@mixin __hidden-button($accentColor) {
+	overflow: hidden;
+	transition: all 0.4s ease;
+	grid-row: 4;
+	width: 100%;
+	background: $accentColor;
+	display: grid;
+	grid-template-columns: 10px 2fr auto 10px;
+	grid-auto-flow: column;
+	justify-content: center;
+	align-content: center;
+	grid-gap: 5px;
+	.calculate-price-work {
+		grid-column: 2/3;
+		border: none;
+		height: 25px;
+		border-radius: 10em;
+		border: 1px solid #7c7c7c;
+		color: #7c7c7c;
+		font-size: 13px;
+		font-family: #dadada;
+		letter-spacing: 1px;
+		outline: none;
+	}
+	.add-to-card {
+		outline: none;
+		grid-column: 3;
+		display: grid;
+		align-content: center;
+		color: $accentColor;
+		width: 25px;
+		height: 25px;
+		border: none;
+		background: #e66a48;
+		border-radius: 10em;
+		font-size: 14px;
+	}
+	.hidden-button--show {
+		height: 50px;
+	}
+	.hidden-button--hide {
+		height: 0px;
+	}
+}
+
+@mixin __baseConfigEffect {
+	.hidden-button--show {
+		height: 50px;
+	}
+	.hidden-button--hide {
+		height: 0px;
+	}
+}
