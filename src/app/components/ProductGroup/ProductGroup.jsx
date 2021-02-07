@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classnames from 'classnames';
 
-import imagine from "./../../__img/plitca.jpg";
+import imagine from "./../../__img/1.jpg";
 
 function ContainerProductGroup({ mirror, ...props }) {
 

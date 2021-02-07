@@ -2,24 +2,21 @@ import React, { useState, useRef } from 'react';
 import classnames from 'classnames';
 import IconLogo from './icon/logo.svg';
 import { useMediaQuery } from 'react-responsive';
-import { auxSetMethod } from './helpers/helpers'; 
+import { auxSetMethod, createFakeDate } from './helpers/helpers'; 
 import { ContainerProductGroup } from "./components/index";
 
 
 import "./app.scss";
 
-
-
-
 function SinglePageApp() {
-
-  
 
   const allMediaQuery = {
     ms: useMediaQuery({ maxWidth: '376px', }), xs: useMediaQuery({ maxWidth: '576px', }),
     sm: useMediaQuery({ maxWidth: '768px', }), md: useMediaQuery({ maxWidth: '992px', }),
     lg: useMediaQuery({ maxWidth: '1200px' }),
   }
+  console.log(createFakeDate.creteDataCardProduct(5))
+  console.log(createFakeDate.__downloadImagine(5))
 
   return (
     <>
@@ -44,8 +41,6 @@ function SinglePageApp() {
         <div className={classnames(auxSetMethod.createMediaClass("main-menu", allMediaQuery))}>
 
         </div>
-
-
 
         <div className={`container-content`}>
 
