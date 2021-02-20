@@ -1,27 +1,47 @@
-@mixin __baseSetting {
+@mixin BASE-SETTING-CONTAINER($globalColor, $mainSizeRadiusCorner) {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: repeat(6, 1fr);
-	grid-gap: 10px;
-}
-
-@mixin __baseSettingProduct($globalColor) {
 	position: relative;
-	display: grid;
+	border-radius: $mainSizeRadiusCorner;
+	background-size: cover;
 	background: $globalColor;
-	border-radius: 10px;
-	background-size: cover;
 	background-repeat: no-repeat;
-	background-size: cover;
 	background-position: center;
-	grid-auto-flow: column;
+	background-size: cover;
+	// grid-auto-flow: column;
+	overflow: hidden;
+}
+@mixin CONFIGURE-LOCATION-OF-GRID {
+	.container-product__vertical-left {
+		grid-column: 4/6;
+		grid-row: 1/7;
+	}
+	.container-product__horizontal-top-left {
+		grid-column: 1/4;
+		grid-row: 1/4;
+	}
+	.container-product__horizontal-bottom-left {
+		grid-column: 1/4;
+		grid-row: 4/7;
+	}
+	.container-product__vertical-right {
+		grid-column: 1/3;
+		grid-row: 1/7;
+	}
+	.container-product__horizontal-top-right {
+		grid-column: 3/6;
+		grid-row: 1/4;
+	}
+	.container-product__horizontal-bottom-right {
+		grid-column: 3/6;
+		grid-row: 4/7;
+	}
 }
 
-@mixin __baseSettingTitle {
+@mixin BASE-SETTING-WRAPPER-CONTENT {
 	display: grid;
 	grid-template-rows: 1fr auto auto auto;
-	height: 100%;
 	grid-auto-flow: row;
+	height: 100%;
 	h3 {
 		grid-row: 2;
 		font-family: $mscM;
@@ -78,19 +98,19 @@
 		border-radius: 10em;
 		font-size: 14px;
 	}
-	.hidden-button--show {
+	.stick-quick-access--show {
 		height: 50px;
 	}
-	.hidden-button--hide {
+	.stick-quick-access--hide {
 		height: 0px;
 	}
 }
 
 @mixin __baseConfigEffect {
-	.hidden-button--show {
+	.stick-quick-access--show {
 		height: 50px;
 	}
-	.hidden-button--hide {
+	.stick-quick-access--hide {
 		height: 0px;
 	}
 }

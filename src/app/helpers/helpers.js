@@ -12,23 +12,18 @@ export const auxSetMethod = {
 export const createFakeDate = {
   creteDataCardProduct(requestData) {
     const result = []
-    const background = this.__downloadImagine(requestData)
+    // const background = this.__downloadImagine(requestData)
     for (let i = 0; i < requestData; ++i) {
       result.push({
         titleCard: "Укладка плитки",
         priceWOrk: "1220р",
-        backgroundCadd: background[i]
+        backgroundCard: this.__addPhotosToCard(i).then(result => result).catch(err => console.error(err)),
       })
     }
     return result;
   },
-  __downloadImagine(request) {
-    const result = []
-    // debugger
-    for (let i = 0; i < request; ++i) {
-      import(`./../__img/${i}.jpg`).then(( mod ) => result.push(mod)).catch((_) => result)
-}
-return result;
+  __addPhotosToCard(index) {
+    return import(`./../__img/${index}.jpg`).then((mode) => mode.default)
   }
 }
 

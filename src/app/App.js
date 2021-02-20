@@ -15,8 +15,6 @@ function SinglePageApp() {
     sm: useMediaQuery({ maxWidth: '768px', }), md: useMediaQuery({ maxWidth: '992px', }),
     lg: useMediaQuery({ maxWidth: '1200px' }),
   }
-  console.log(createFakeDate.creteDataCardProduct(5))
-  console.log(createFakeDate.__downloadImagine(5))
 
   return (
     <>
@@ -44,9 +42,9 @@ function SinglePageApp() {
 
         <div className={`container-content`}>
 
-          <ContainerProductGroup mirror="left" ></ContainerProductGroup>   
-          <ContainerProductGroup mirror="right" ></ContainerProductGroup>   
-          <ContainerProductGroup mirror="left" ></ContainerProductGroup>   
+          <ContainerProductGroup locationBlock="left" ></ContainerProductGroup>   
+          <ContainerProductGroup locationBlock="right" ></ContainerProductGroup>   
+          <ContainerProductGroup locationBlock="left" ></ContainerProductGroup>   
 
         </div>
       </div>

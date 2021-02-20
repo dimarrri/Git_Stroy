@@ -1,6 +1,6 @@
 @import "./helpers/FontAwesome/css/font-awesome.min.css";
-@import "./mixin/mixin.scss";
-@import "./components/ProductGroup/index.scss";
+@import "./styles/generalMixin.scss";
+@import "./styles/variables.scss";
 @font-face {
   font-family: "MuseoSansCyrlBold";
   src: url(./fonts/MuseoSansCyrl/MuseoSansCyrlBold.ttf);
@@ -21,11 +21,7 @@
   font-style: normal;
   src: url(./helpers/FontAwesome/fonts/fontawesome-webfont.ttf);
 }
-$mscM: "MuseoSansCyrlMedium", Arial, sans-serif;
-$mscB: "MuseoSansCyrlBold", Arial, sans-serif;
-$globalColor: #676666;
-$accentColor: #ebebeb;
-$numberColumns: 24;
+
 
 body {
   margin: 0;
@@ -121,10 +117,5 @@ body {
   padding: 5px;
   padding-top: 0;
   @include styles_scroll_bar();
-  .wrapper-card-group-left {
-    @include wrapper-card-group-left ($globalColor, $accentColor);
-  }
-  .wrapper-card-group-right {
-    @include wrapper-card-group-right ($globalColor, $accentColor);
-  }
+  
 }
