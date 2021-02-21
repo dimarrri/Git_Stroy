@@ -1,116 +1,53 @@
-@mixin BASE-SETTING-CONTAINER($globalColor, $mainSizeRadiusCorner) {
+@mixin BASE-SETTING-CONTAINER($accentColor, $mainSizeRadiusCorner) {
 	display: grid;
 	position: relative;
 	border-radius: $mainSizeRadiusCorner;
 	background-size: cover;
-	background: $globalColor;
+	background: $accentColor;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	// grid-auto-flow: column;
 	overflow: hidden;
+	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 @mixin CONFIGURE-LOCATION-OF-GRID {
-	.container-product__vertical-left {
+	.container-vertical__left-side {
 		grid-column: 4/6;
 		grid-row: 1/7;
 	}
-	.container-product__horizontal-top-left {
+	.container-horizontal-top__left-side {
 		grid-column: 1/4;
 		grid-row: 1/4;
 	}
-	.container-product__horizontal-bottom-left {
+	.container-horizontal-bottom__left-side {
 		grid-column: 1/4;
 		grid-row: 4/7;
 	}
-	.container-product__vertical-right {
+	.container-vertical__right-side {
 		grid-column: 1/3;
 		grid-row: 1/7;
 	}
-	.container-product__horizontal-top-right {
+	.container-horizontal-top__right-side {
 		grid-column: 3/6;
 		grid-row: 1/4;
 	}
-	.container-product__horizontal-bottom-right {
+	.container-horizontal-bottom__right-side {
 		grid-column: 3/6;
 		grid-row: 4/7;
 	}
 }
 
-@mixin BASE-SETTING-WRAPPER-CONTENT {
-	display: grid;
-	grid-template-rows: 1fr auto auto auto;
-	grid-auto-flow: row;
-	height: 100%;
-	h3 {
-		grid-row: 2;
-		font-family: $mscM;
-		font-weight: 100;
-		color: $accentColor;
-		font-size: 24px;
-		display: grid;
-		margin: 0;
-		margin-left: 10px;
-	}
-	span {
-		grid-row: 3;
-		font-size: 30px;
-		font-family: $mscB;
-		color: $accentColor;
-		margin: 10px;
-	}
-}
-
-@mixin __hidden-button($accentColor) {
-	overflow: hidden;
-	transition: all 0.4s ease;
-	grid-row: 4;
-	width: 100%;
-	background: $accentColor;
-	display: grid;
-	grid-template-columns: 10px 2fr auto 10px;
-	grid-auto-flow: column;
-	justify-content: center;
-	align-content: center;
-	grid-gap: 5px;
-	.calculate-price-work {
-		grid-column: 2/3;
-		border: none;
-		height: 25px;
-		border-radius: 10em;
-		border: 1px solid #7c7c7c;
-		color: #7c7c7c;
-		font-size: 13px;
-		font-family: #dadada;
-		letter-spacing: 1px;
-		outline: none;
-	}
-	.add-to-card {
-		outline: none;
-		grid-column: 3;
-		display: grid;
-		align-content: center;
-		color: $accentColor;
-		width: 25px;
-		height: 25px;
-		border: none;
-		background: #e66a48;
-		border-radius: 10em;
-		font-size: 14px;
-	}
+@mixin __baseConfigEffect($globalColor, $accentColor) {
 	.stick-quick-access--show {
-		height: 50px;
+		height: 90px;
+		h3 {
+			color: $globalColor;
+			font-size: 19px;
+			transition: .4s font-size .2s ease;
+		}
 	}
 	.stick-quick-access--hide {
-		height: 0px;
-	}
-}
-
-@mixin __baseConfigEffect {
-	.stick-quick-access--show {
-		height: 50px;
-	}
-	.stick-quick-access--hide {
-		height: 0px;
+		height: 40px;
+		background: rgba($color: $accentColor, $alpha: 0.7);
 	}
 }

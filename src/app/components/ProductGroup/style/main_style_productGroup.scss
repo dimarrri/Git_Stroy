@@ -6,88 +6,68 @@
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(6, 1fr);
 	grid-gap: 10px;
+	padding: 5px;
 	.container-product__vertical,
 	.container-product__horizontal-top,
 	.container-product__horizontal-bottom {
-		@include BASE-SETTING-CONTAINER($globalColor, $mainSizeRadiusCorner);
+		@include BASE-SETTING-CONTAINER($accentColor, $mainSizeRadiusCorner);
 	}
 	@include CONFIGURE-LOCATION-OF-GRID();
-	.wrapper-content-product__horizontal,
-	.wrapper-content-product__vertical {
+	.wrapper-content-product {
 		display: grid;
 		grid-auto-flow: row;
 		height: 100%;
+		width: 100%;
 		grid-template-rows: 1fr auto auto;
-		border-radius: 16px;
-		overflow: hidden;
+		.title-container__vertical {
+			grid-auto-flow: row;
+			span {
+				justify-self: start;
+			}
+		}
+		.title-container__horizontal {
+			grid-auto-flow: column;
+			span {
+				justify-self: end;
+			}
+		}
 		.title-container {
 			grid-row: 2;
 			display: grid;
-			grid-template-rows: 1fr 1fr;
-			grid-auto-flow: column;
-			// justify-self: ;
 			h3 {
+				white-space: nowrap;
 				font-family: $mscM;
 				font-weight: 100;
-				color: $accentColor;
-				font-size: 25px;
-				display: grid;
+				font-size: 24px;
 				margin: 0;
 				color: $accentColor;
 				margin-left: 10px;
-				padding: 5px;
 				justify-self: start;
 				align-self: center;
 			}
 			span {
 				align-self: center;
-				justify-self: end;
+				font-size: 30px;
+				font-family: $mscB;
+				color: $accentColor;
+				margin: 10px;
 			}
 		}
 	}
-	.wrapper-content-product__horizontal {
-		grid-template-rows: 1fr auto auto;
+	.stick-quick-access {
+		width: 100%;
+		background: $accentColor;
+		border-radius: $mainSizeRadiusCorner - 1;
+		grid-row: 3;
+		transition: all .2s ease;
 		h3 {
-			grid-row: 2;
-		}
-		span {
-			grid-row: 2;
-		}
-	}
-	.wrapper-content-product__vertical {
-		grid-template-rows: 1fr auto auto auto;
-		h3 {
-			grid-row: 2;
-		}
-		span {
-			grid-row: 3;
-		}
-	}
-	.wrapper-content-product {
-		// @include BASE-SETTING-WRAPPER-CONTENT();
-		// display: grid;
-		// grid-auto-flow: row;
-		// height: 100%;
-		h3 {
-			// grid-row: 2;
+			white-space: nowrap;
 			font-family: $mscM;
 			font-weight: 100;
-			color: $accentColor;
-			font-size: 24px;
-			display: grid;
-			margin: 0;
-			margin-left: 10px;
+			font-size: 22px;
+			margin: 7px 0px 7px 10px;
+			color: $globalColor;
 		}
-		span {
-			// grid-row: 3;
-			font-size: 30px;
-			font-family: $mscB;
-			color: $accentColor;
-			margin: 10px;
-		}
-		.stick-quick-access {
-			@include __hidden-button($accentColor);
-		}
-		@include __baseConfigEffect();
 	}
+	@include __baseConfigEffect($globalColor, $accentColor);
 }

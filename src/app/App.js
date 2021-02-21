@@ -42,9 +42,9 @@ function SinglePageApp() {
 
         <div className={`container-content`}>
 
-          <ContainerProductGroup locationBlock="left" ></ContainerProductGroup>   
-          <ContainerProductGroup locationBlock="right" ></ContainerProductGroup>   
-          <ContainerProductGroup locationBlock="left" ></ContainerProductGroup>   
+          <ContainerProductGroup locationBlock="left" index={0} ></ContainerProductGroup>   
+          <ContainerProductGroup locationBlock="right" index={1} ></ContainerProductGroup>   
+          <ContainerProductGroup locationBlock="left" index={2} ></ContainerProductGroup>   
 
         </div>
       </div>
