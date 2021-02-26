@@ -42,26 +42,28 @@ function ProductCard({ classPosition, renderingSide, ...props }) {
 				})}>
 					<h3>Укладка плитки</h3>
 					<span>134р/м&sup2;</span>
-					<span className={classnames({
-						["stick-quick-separator"]: true,
-						["stick-quick-separator--show"]: statusStickQuick,
-						["stick-quick-separator--hide"]: !statusStickQuick,
-					})}></span>
+					<span className={classnames({ [`stick-quick-separator stick-quick-separator${statusStickQuick ? "--show" : "--hide"}`]: true, })}></span>
 					<div className={classnames({
 						[`stick-quick-manager__${classPosition.split("-")[0]}`]: true,
 						["stick-quick-manager--show"]: statusStickQuick,
 						["stick-quick-manager--hide"]: !statusStickQuick,
 					})}>
 
-						<div className="fast-field-length-room">
-							<span>Длинна</span>
+						<div className="fast-field-calc-length-room">
 							<input placeholder="м"></input>
+							<span>Длинна</span>
 						</div>
-						<div className="fast-field-width-room"> 
-
+						<div className="fast-field-calc-length-room">
+							<input placeholder="м"></input>
+							<span>Ширина</span>
 						</div>
-						<div className="fast-field-height-room"> 
-
+						<div className="fast-field-calc-length-room">
+							<input placeholder="м"></input>
+							<span>Высота</span>
+						</div>
+						<div className="column-sum-quadrature-room">
+							<input placeholder="м" value="" readOnly value="24м2"></input>
+							<span>Квадратура</span>
 						</div>
 
 					</div>

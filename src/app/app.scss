@@ -124,7 +124,7 @@ body {
   grid-auto-rows: 450px;
   grid-gap: 10px;
   height: 100%;
-  padding: 5px;
+  // padding: 5px;
   padding-top: 0;
   @include styles_scroll_bar();
 }
