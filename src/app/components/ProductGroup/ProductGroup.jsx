@@ -45,26 +45,31 @@ function ProductCard({ classPosition, renderingSide, ...props }) {
 					<span className={classnames({ [`stick-quick-separator stick-quick-separator${statusStickQuick ? "--show" : "--hide"}`]: true, })}></span>
 					<div className={classnames({
 						[`stick-quick-manager__${classPosition.split("-")[0]}`]: true,
-						["stick-quick-manager--show"]: statusStickQuick,
-						["stick-quick-manager--hide"]: !statusStickQuick,
+						[`stick-quick-manager-${classPosition.split("-")[0]}--show`]: statusStickQuick,
+						[`stick-quick-manager-${classPosition.split("-")[0]}--hide`]: !statusStickQuick,
 					})}>
+						{["Длинна", "Ширина", "Высота"].map((value, index) => (
+							<div className="fast-field-calc-length-room">
+								<input key={String(index)} placeholder="м"></input>
+								<span>{value}</span>
+							</div>
+						))}
 
-						<div className="fast-field-calc-length-room">
-							<input placeholder="м"></input>
-							<span>Длинна</span>
-						</div>
-						<div className="fast-field-calc-length-room">
-							<input placeholder="м"></input>
-							<span>Ширина</span>
-						</div>
-						<div className="fast-field-calc-length-room">
-							<input placeholder="м"></input>
-							<span>Высота</span>
-						</div>
 						<div className="column-sum-quadrature-room">
 							<input placeholder="м" value="" readOnly value="24м2"></input>
 							<span>Квадратура</span>
 						</div>
+
+					</div>
+					<div className={classnames({
+						["stick-quick-block-button"]: true,
+						["stick-quick-block-button--show"]: statusStickQuick,
+						// ["stick-quick-block-button--hide"]: !statusStickQuick,
+					})}>
+						<h6 className="sum__stick-quick">12333p</h6>
+						<button type="button" data-calculate="w"><i class="fa fa-calculator" aria-hidden="true"></i></button>
+						<button type="button" data-detail="h"><i class="fa fa-newspaper-o" aria-hidden="true"></i></button>
+						<button type="button" data-add-basket="x"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
 
 					</div>
 
