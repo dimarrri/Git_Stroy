@@ -166,36 +166,53 @@
 			}
 			.stick-quick-block-button {
 				width: 100%;
-				height: auto;
+				transition: all .4s ease;
 				grid-row: 4;
 				grid-column: 1/3;
 				display: grid;
-				grid-template-columns: 50% repeat(3, 1fr);
-				margin-bottom: 5px;
+				grid-template-columns: auto repeat(3, 43px);
+				justify-items: start;
 				.sum__stick-quick {
-					justify-content: start;
 					margin: 5px;
+					align-self: center;
 					margin-left: 10px;
 					font-family: $mscB;
 					font-size: 19px;
+					span {
+						font-family: $mscL;
+						font-size: 12px;
+						margin: 4px;
+					}
 				}
 				button {
+					color: #ffffff;
 					width: 35px;
+					font-size: 14px;
 					height: 35px;
-					padding: 9px;
+					margin: 5px;
+					margin-top: 0px;
 					justify-self: center;
 					align-self: center;
 					border: none;
 					border-radius: 10em;
-					background: $globalColor;
+					background: #dfdb73;
 				}
 				button[data-calculate="w"] {
-					background: red;
+					background: #71d264;
 				}
 				button[data-detail="h"] {
-					background: blue;
+					background: #73a4df;
 				}
 			}
+			.stick-quick-block-button--show {
+				height: 40px;
+
+			}
+			.stick-quick-block-button--hide {
+				height: 0px;
+
+			}
+
 
 			.stick-quick-manager-vertical--show {
 				height: 100px;

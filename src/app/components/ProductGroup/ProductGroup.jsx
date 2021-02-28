@@ -64,9 +64,9 @@ function ProductCard({ classPosition, renderingSide, ...props }) {
 					<div className={classnames({
 						["stick-quick-block-button"]: true,
 						["stick-quick-block-button--show"]: statusStickQuick,
-						// ["stick-quick-block-button--hide"]: !statusStickQuick,
+						["stick-quick-block-button--hide"]: !statusStickQuick,
 					})}>
-						<h6 className="sum__stick-quick">12333p</h6>
+						<h6 className="sum__stick-quick"><span>Итого:</span>12333p</h6>
 						<button type="button" data-calculate="w"><i class="fa fa-calculator" aria-hidden="true"></i></button>
 						<button type="button" data-detail="h"><i class="fa fa-newspaper-o" aria-hidden="true"></i></button>
 						<button type="button" data-add-basket="x"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
